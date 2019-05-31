@@ -1,0 +1,27 @@
+{
+  "name": "motetid",
+  "version": "1.0.0",
+  "description": "Effektive møter",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "now-build": "next build"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Jonas Enge",
+    "email": "jonas.enge@gmail.com",
+    "url": "https://github.com/maccyber"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@mdx-js/loader": "^1.0.20",
+    "@next/mdx": "^8.1.0",
+    "next": "^8.1.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-icons": "^3.7.0"
+  }
+}
