@@ -11,9 +11,7 @@ export default () => {
   const [participants, setParticipants] = useState(5)
   const [wages, setWages] = useState(500)
   const [alarm, setAlarm] = useState(true)
-  let hour = new Date().toLocaleTimeString('en-GB').slice(0, 2)
-  const [endMeeting, setEndMeeting] = useState(`${hour.charAt(0) === 0 ? 0 : ''}${++hour}:45`)
-  const { isRunning, setIsRunning, elapsedTime, setElapsedTime, isOvertime } = useTimer(endMeeting)
+  const { isRunning, setIsRunning, elapsedTime, setElapsedTime, isOvertime, endMeeting, setEndMeeting } = useTimer()
 
   const timeFormat = (s = elapsedTime) => {
     const pad = (n, z = 2) => ('00' + n).slice(-z)
@@ -78,7 +76,10 @@ export default () => {
           </p>
           <p style={{ fontSize: '30px', fontFamily: 'monospace' }}>{elapsedTime && timeFormat()}
             <span style={{ verticalAlign: 'sub', cursor: 'pointer' }} onClick={() => setAlarm(!alarm)}>
-              { alarm ? <MdAlarmOn /> : <MdAlarmOff /> }
+              { alarm
+                ? <span style={{ color: '#47E5BC' }}><MdAlarmOn /></span>
+                : <span style={{ color: '#F47F97' }}><MdAlarmOff /></span>
+              }
             </span>
           </p>
           <p>Dette møtet har kostet <b>{elapsedTime && estimatedCost()}</b> hittil.</p>

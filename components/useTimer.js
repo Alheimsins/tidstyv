@@ -1,18 +1,19 @@
 import { useState, useEffect } from 'react'
 
-export default (endMeeting) => {
+export default () => {
   const [isRunning, setIsRunning] = useState(false)
   const [elapsedTime, setElapsedTime] = useState()
   const [isOvertime, setIsOvertime] = useState(false)
+  let hour = new Date().toLocaleTimeString('en-GB').slice(0, 2)
+  const [endMeeting, setEndMeeting] = useState(`${hour.charAt(0) === 0 ? 0 : ''}${++hour}:45`)
 
   // TODO: Fix bug - endMeeting is kept when starting over
   const isRunningLate = () => {
-    if (isRunning && !isOvertime) {
+    if (isRunning) {
       const stripTime = time => time.split(':').map(Number)
       const [ endH, endM ] = stripTime(endMeeting)
       const [ nowH, nowM ] = [ new Date().getHours(), new Date().getMinutes() ]
-      console.log(`${nowH}:${nowM} > ${endH}:${endM}`)
-      if (nowH > endH || (nowH === endH && nowM >= endM)) setIsOvertime(!isOvertime)
+      setIsOvertime(nowH > endH || (nowH === endH && nowM >= endM))
     }
   }
 
@@ -32,6 +33,8 @@ export default (endMeeting) => {
     setIsRunning,
     elapsedTime,
     setElapsedTime,
-    isOvertime
+    isOvertime,
+    endMeeting,
+    setEndMeeting
   }
 }
