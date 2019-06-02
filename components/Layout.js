@@ -3,20 +3,20 @@ import Head from 'next/head'
 export default ({ children }) => (
   <div className='container'>
     <Head>
-      <title>Møtetid</title>
+      <title>Tidstyv</title>
       <meta name='viewport' content='initial-scale=1.0, width=device-width' />
-      <meta property='og:title' content='Møtetid' />
-      <meta property='og:description' content='Møtetid' />
+      <meta property='og:title' content='Tidstyv' />
+      <meta property='og:description' content='Tidstyv' />
       <meta property='og:image' content='/static/apple-icon-152x152.png' />
       <meta name='theme-color' content='#000000' />
       <meta name='twitter:card' content='summary' />
       <meta name='twitter:creator' content='@maccyber' />
-      <meta name='twitter:title' content='Møtetid' />
-      <meta name='twitter:description' content='Møtetid' />
+      <meta name='twitter:title' content='Tidstyv' />
+      <meta name='twitter:description' content='Tidstyv' />
       <meta name='twitter:image' content='https://bigfive-test.com/static/apple-icon.png' />
-      <meta name='description' content='Møtetid' />
-      <meta name='keywords' content='Møtetid' />
-      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: `{ "@context": "http://schema.org/", "@type": "WebSite", "name": "Møtetid", "url": "https://motetid.no" }` }} />
+      <meta name='description' content='Tidstyv' />
+      <meta name='keywords' content='Tidstyv' />
+      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: `{ "@context": "http://schema.org/", "@type": "WebSite", "name": "Tidstyv", "url": "https://tidstyv.now.sh" }` }} />
       <link rel='apple-touch-icon' sizes='180x180' href='/static/apple-touch-icon.png' />
       <link rel='icon' type='image/png' sizes='32x32' href='/static/favicon-32x32.png' />
       <link rel='icon' type='image/png' sizes='16x16' href='/static/favicon-16x16.png' />
@@ -24,6 +24,8 @@ export default ({ children }) => (
       <meta name='msapplication-TileColor' content='#2d89ef' />
       <meta name='theme-color' content='#ffffff' />
       <link rel='manifest' href='/static/manifest.json' />
+      <link href='https://fonts.googleapis.com/css?family=Quicksand&display=swap' rel='stylesheet' />
+      <link rel='preconnect' href='https://fonts.gstatic.com/' crossorigin />
     </Head>
     <div className='header' />
     <div className='main'>
@@ -33,7 +35,7 @@ export default ({ children }) => (
       {`
         body {
           background-color: #A3DECE;
-          font-family: 'Open Sans', sans-serif;
+          font-family: 'Quicksand', sans-serif;
           line-height: 1.9;
           letter-spacing: 1px;
           font-weight: 300;

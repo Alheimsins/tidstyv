@@ -1,4 +1,4 @@
-import { MdGroup, MdAccessTime, MdAlarmOn, MdAlarmOff } from 'react-icons/md'
+import { MdGroup, MdAccessTime } from 'react-icons/md'
 import { useState, Fragment } from 'react'
 import useTimer from './useTimer'
 import Field from './Field'
@@ -6,12 +6,22 @@ import Input from './Input'
 import Button from './Button'
 import Card from './Card'
 import Rules from './Rules'
+import Alarm from './Alarm'
 
 export default () => {
   const [participants, setParticipants] = useState(5)
   const [wages, setWages] = useState(500)
-  const [alarm, setAlarm] = useState(true)
-  const { isRunning, setIsRunning, elapsedTime, setElapsedTime, isOvertime, endMeeting, setEndMeeting } = useTimer()
+  const {
+    isRunning,
+    setIsRunning,
+    elapsedTime,
+    setElapsedTime,
+    isOvertime,
+    endMeeting,
+    setEndMeeting,
+    alarm,
+    setAlarm
+  } = useTimer()
 
   const timeFormat = (s = elapsedTime) => {
     const pad = (n, z = 2) => ('00' + n).slice(-z)
@@ -26,7 +36,6 @@ export default () => {
 
   const clearTimer = () => {
     setIsRunning(false)
-    setAlarm(false)
     setElapsedTime(false)
   }
 
@@ -35,7 +44,7 @@ export default () => {
       { !isRunning
         ? <Fragment>
           <Rules />
-          <Card name='MØTETID' style={{ marginTop: '10px' }}>
+          <Card name='TIDSTYV' style={{ marginTop: '10px' }}>
             <p />
             <Field name='Møtedeltakere' description='Antall møtedeltakere'>
               <Input
@@ -71,16 +80,11 @@ export default () => {
           </Card>
         </Fragment>
         : <Card name='MØTE PÅGÅR' style={{ textAlign: 'center' }}>
-          <p style={{ fontSize: '12px', color: '#757575' }}>
+          <p style={{ fontFamily: '"Open Sans", sans-serif', fontSize: '12px', color: '#757575' }}>
             <i><MdGroup /> Møtedeltakere: {participants} | <MdAccessTime /> Møteslutt: {endMeeting}</i>
           </p>
           <p style={{ fontSize: '30px', fontFamily: 'monospace' }}>{elapsedTime && timeFormat()}
-            <span style={{ verticalAlign: 'sub', cursor: 'pointer' }} onClick={() => setAlarm(!alarm)}>
-              { alarm
-                ? <span style={{ color: '#47E5BC' }}><MdAlarmOn /></span>
-                : <span style={{ color: '#F47F97' }}><MdAlarmOff /></span>
-              }
-            </span>
+            <Alarm alarm={alarm} setAlarm={setAlarm} />
           </p>
           <p>Dette møtet har kostet <b>{elapsedTime && estimatedCost()}</b> hittil.</p>
           { isOvertime && <p>MØTET ER OVER</p> }

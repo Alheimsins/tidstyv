@@ -1,6 +1,9 @@
 {
   "version": 2,
-  "alias": "motetid.now.sh",
+  "alias": [
+    "motetid.now.sh",
+    "tidstyv.now.sh"
+  ],
   "builds": [
     {
       "src": "next.config.js", "use": "@now/next"

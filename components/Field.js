@@ -27,6 +27,7 @@ export default (props) => (
           float: left;
           font-size: 11px;
           font-style: italic;
+          font-family: 'Open Sans', sans-serif;
           color: #6b6b6b;
         }
       `}

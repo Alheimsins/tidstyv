@@ -1,4 +1,4 @@
-# motetid
+# tidstyv
 
 ## Project setup
 ```
