@@ -1,5 +1,7 @@
 # tidstyv
 
+[demo](https://tidstyv.now.sh)
+
 ## Project setup
 ```
 npm install
@@ -19,6 +21,13 @@ npm run build
 ```
 now
 ```
+
+### Screenshots
+
+![](/static/tidstyv1.png)
+
+![](/static/tidstyv2.png)
+
 
 # License
 
