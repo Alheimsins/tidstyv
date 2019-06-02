@@ -1,6 +1,8 @@
 # tidstyv
 
-[demo](https://tidstyv.now.sh)
+### Demo
+
+[https://tidstyv.now.sh](https://tidstyv.now.sh)
 
 ## Project setup
 ```
