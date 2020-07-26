@@ -34,3 +34,10 @@ now
 # License
 
 [MIT](LICENSE)
+
+## About
+
+Created with <3 by [Alheimsins](https://github.com/Alheimsins)
+
+![Alheimsins symbol](https://file-qwoleuymtm.now.sh "Alheimsins symbol")
+
