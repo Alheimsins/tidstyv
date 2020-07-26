@@ -37,6 +37,6 @@ now
 
 ## About
 
-Created by with ❤ for [Alheimsins](https://alheimsins.net)
+Created with ❤ for [Alheimsins](https://alheimsins.net)
 
 <img src="https://image.ibb.co/dPH08G/logo_black.png" alt="Alhemsins logo" height="150px" width="150px" />
