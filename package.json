@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "now-build": "next build",
-    "refresh": "rm -rf node_modules && rm package-lock && npm i"
+    "refresh": "rm -rf node_modules && rm package-lock.json && npm i"
   },
   "keywords": [],
   "author": {
